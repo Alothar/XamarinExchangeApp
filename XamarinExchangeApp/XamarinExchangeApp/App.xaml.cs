@@ -3,7 +3,9 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XamarinExchangeApp.Services;
+using XamarinExchangeApp.Services.WCFExchangeServiceProxy;
 using XamarinExchangeApp.Views;
+using XamarinExchangeApp.WCFService;
 
 namespace XamarinExchangeApp
 {
@@ -15,15 +17,12 @@ namespace XamarinExchangeApp
         public static string AzureBackendUrl =
             DeviceInfo.Platform == DevicePlatform.Android ? "http://10.0.2.2:5000" : "http://localhost:5000";
         public static bool UseMockDataStore = true;
+        public static ExchangeRatesManager ExchangeRatesManager { get; set; }
 
         public App()
         {
             InitializeComponent();
-
-            if (UseMockDataStore)
-                DependencyService.Register<MockDataStore>();
-            else
-                DependencyService.Register<AzureDataStore>();
+            ExchangeRatesManager = new ExchangeRatesManager(new ExchangeRatesServiceProxy());
             MainPage = new MainPage();
         }
 
