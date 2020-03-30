@@ -20,7 +20,7 @@ namespace XamarinExchangeApp.Views
 
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
+                new HomeMenuItem {Id = MenuItemType.Exchange_Rates, Title="Exchange Rates" },
                 new HomeMenuItem {Id = MenuItemType.About, Title="About" }
             };
 
