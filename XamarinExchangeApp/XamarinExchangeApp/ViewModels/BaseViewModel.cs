@@ -2,18 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-
+using WCFExchangeService;
 using Xamarin.Forms;
-
-using XamarinExchangeApp.Models;
 using XamarinExchangeApp.Services;
 
 namespace XamarinExchangeApp.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
-
         bool isBusy = false;
         public bool IsBusy
         {
