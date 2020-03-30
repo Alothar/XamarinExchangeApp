@@ -1,12 +1,12 @@
 # XamarinExchangeApp
-Xamarin app to display exchange rates - university project
+Xamarin app to display exchange rates - university project.
 ## Overview
 
-* This project uses the [ExchangeWS](https://github.com/Alothar/ExchangeWS) to show exchange rates on your Android or iOS device.
+* This project uses the [ExchangeWS WebService](https://github.com/Alothar/ExchangeWS) to show exchange rates on your Android or iOS device.
 
 ## Tech Stack
 
-* Cross-platform: Xamarin,.NET, WCF
+* Cross-platform: Xamarin,.NET, WCF.
 
 ## Resources
 
@@ -14,4 +14,4 @@ Xamarin app to display exchange rates - university project
 
 ## History
 
-* Project started in March 2020
+* Project started in March 2020.
