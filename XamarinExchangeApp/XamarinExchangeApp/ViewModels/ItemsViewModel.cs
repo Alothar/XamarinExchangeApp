@@ -2,9 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
-
 using XamarinExchangeApp.Models;
 using XamarinExchangeApp.Views;
 
@@ -12,20 +10,19 @@ namespace XamarinExchangeApp.ViewModels
 {
     public class ItemsViewModel : BaseViewModel
     {
-        public ObservableCollection<Item> Items { get; set; }
+        public ObservableCollection<ExchangeRateType> Items { get; set; }
         public Command LoadItemsCommand { get; set; }
 
         public ItemsViewModel()
         {
-            Title = "Browse";
-            Items = new ObservableCollection<Item>();
+            Title = "Exchange Rates";
+            Items = new ObservableCollection<ExchangeRateType>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
+            MessagingCenter.Subscribe<NewItemPage, ExchangeRateType>(this, "AddItem", async (obj, item) =>
             {
-                var newItem = item as Item;
+                var newItem = item as ExchangeRateType;
                 Items.Add(newItem);
-                await DataStore.AddItemAsync(newItem);
             });
         }
 
@@ -36,7 +33,7 @@ namespace XamarinExchangeApp.ViewModels
             try
             {
                 Items.Clear();
-                var items = await DataStore.GetItemsAsync(true);
+                var items = await App.ExchangeRatesManager.GetExchangeRatesAsync();
                 foreach (var item in items)
                 {
                     Items.Add(item);
