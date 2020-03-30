@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using WCFExchangeService;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -26,10 +27,10 @@ namespace XamarinExchangeApp.Views
         {
             InitializeComponent();
 
-            var item = new Item
+            var item = new Models.ExchangeRateType
             {
-                Text = "Item 1",
-                Description = "This is an item description."
+                Currency = "Item 1",
+                Code = "This is an item description."
             };
 
             viewModel = new ItemDetailViewModel(item);

@@ -10,6 +10,7 @@ using Xamarin.Forms.Xaml;
 using XamarinExchangeApp.Models;
 using XamarinExchangeApp.Views;
 using XamarinExchangeApp.ViewModels;
+using WCFExchangeService;
 
 namespace XamarinExchangeApp.Views
 {
@@ -30,7 +31,7 @@ namespace XamarinExchangeApp.Views
         async void OnItemSelected(object sender, EventArgs args)
         {
             var layout = (BindableObject)sender;
-            var item = (Item)layout.BindingContext;
+            var item = (Models.ExchangeRateType)layout.BindingContext;
             await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
         }
 

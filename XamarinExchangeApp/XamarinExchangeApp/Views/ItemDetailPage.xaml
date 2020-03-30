@@ -8,10 +8,12 @@
              Title="{Binding Title}">
 
     <StackLayout Spacing="20" Padding="15">
-        <Label Text="Text:" FontSize="Medium" />
-        <Label Text="{Binding Item.Text}" d:Text="Item name" FontSize="Small"/>
-        <Label Text="Description:" FontSize="Medium" />
-        <Label Text="{Binding Item.Description}" d:Text="Item description" FontSize="Small"/>
+        <Label Text="Currency Code:" FontSize="Medium" />
+        <Label Text="{Binding Item.Code}" d:Text="Item Code" FontSize="Small"/>
+        <Label Text="Currency:" FontSize="Medium" />
+        <Label Text="{Binding Item.Currency}" d:Text="Item Currency" FontSize="Small"/>
+        <Label Text="Rate:" FontSize="Medium" />
+        <Label Text="{Binding Item.Rate}" d:Text="Item Rate" FontSize="Small"/>
     </StackLayout>
     
 </ContentPage>

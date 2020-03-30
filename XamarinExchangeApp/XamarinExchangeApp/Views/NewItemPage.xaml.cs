@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using WCFExchangeService;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,16 +14,15 @@ namespace XamarinExchangeApp.Views
     [DesignTimeVisible(false)]
     public partial class NewItemPage : ContentPage
     {
-        public Item Item { get; set; }
+        public Models.ExchangeRateType Item { get; set; }
 
         public NewItemPage()
         {
             InitializeComponent();
 
-            Item = new Item
+            Item = new Models.ExchangeRateType
             {
-                Text = "Item name",
-                Description = "This is an item description."
+                Code = "Currency code."
             };
 
             BindingContext = this;

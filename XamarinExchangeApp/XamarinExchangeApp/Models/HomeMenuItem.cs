@@ -6,7 +6,7 @@ namespace XamarinExchangeApp.Models
 {
     public enum MenuItemType
     {
-        Browse,
+        Exchange_Rates,
         About
     }
     public class HomeMenuItem
