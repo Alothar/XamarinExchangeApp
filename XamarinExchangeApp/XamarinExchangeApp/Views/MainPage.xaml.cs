@@ -21,7 +21,7 @@ namespace XamarinExchangeApp.Views
 
             MasterBehavior = MasterBehavior.Popover;
 
-            MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
+            MenuPages.Add((int)MenuItemType.Exchange_Rates, (NavigationPage)Detail);
         }
 
         public async Task NavigateFromMenu(int id)
@@ -30,7 +30,7 @@ namespace XamarinExchangeApp.Views
             {
                 switch (id)
                 {
-                    case (int)MenuItemType.Browse:
+                    case (int)MenuItemType.Exchange_Rates:
                         MenuPages.Add(id, new NavigationPage(new ItemsPage()));
                         break;
                     case (int)MenuItemType.About:
